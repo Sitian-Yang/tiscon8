@@ -22,6 +22,8 @@ public class Customer implements Serializable {
 
     private String month;
 
+    private String customeranxious;
+
     public int getCustomerId() {
         return customerId;
     }
@@ -92,5 +94,13 @@ public class Customer implements Serializable {
 
     public void setMonth(String month) {
         this.month = month;
+    }
+
+    public String getCustomeranxious(){
+        return customeranxious;
+    }
+
+    public void setCustomeranxious(String customeranxious) {
+        this.customeranxious = customeranxious;
     }
 }

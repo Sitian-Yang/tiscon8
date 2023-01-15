@@ -125,6 +125,19 @@
           </tr>
         </tbody>
       </table>
+      <div class="sub-title">備考</div>
+      <table class="table table-bordered">
+        <col span="1" style="background-color: #FFFFFF;">
+        <col span="2" style="background-color: #FFFFFF;">
+        <tbody>
+        <tr>
+          <th style="width: 40%">引っ越しにあたって不安なこと</th>
+          <td>
+            <span th:text="*{customeranxious}" />
+          </td>
+          <input type="hidden" name="customeranxious" id="customeranxious" th:value="*{customeranxious}"/>
+        </tr>
+      </table>
       <div class="form-group">
         <div class="text-center">
           <button type="submit" name="backToInput" class="btn-back">入力画面へ戻る</button>
