@@ -307,3 +307,23 @@ td {
     border-radius: .28571429rem;
     border: 1px solid rgba(34,36,38,.15);
 }
+
+.checklist {
+    padding:0.1em 0.1em;
+    margin:0 auto;
+    background: #F4F5F5;
+    width: 350px;
+}
+
+.page-titles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    color: #313131;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: "Roboto";
+}

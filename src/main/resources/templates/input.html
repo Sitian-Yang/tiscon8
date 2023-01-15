@@ -20,23 +20,23 @@
     <div class="page-title">
       お見積り情報入力
     </div>
-    <ul th:if="${#fields.hasErrors('all')}">
-      <li th:each="err : ${#fields.errors('all')}" th:text="${err}"></li>
-    </ul>
     <div class="col-sm-12">
       <fieldset>
         <div class="sub-title">お客様情報</div>
         <div class="form-group">
           <label for="customerName">氏名</label>
           <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎"/>
+          <font color="red"><td class="warning" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></td></font>
         </div>
         <div class="form-group">
           <label for="tel">連絡先TEL</label>
           <input type="tel" id="tel" name="tel" th:field="*{tel}" class="form-control" value="03-1234-5678"/>
+          <font color="red"><td th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}">Name Error</td></font>
         </div>
         <div class="form-group">
           <label for="email">連絡先メールアドレス</label>
           <input type="text" id="email" name="email" th:field="*{email}" class="form-control" value="test@test.com"/>
+          <font color="red"><td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td></font>
         </div>
         <div class="sub-title">集荷元・お届け先</div>
         <div class="form-group">
@@ -49,6 +49,7 @@
           <label for="oldAddress">集荷元住所（市区町村以下）</label>
           <input type="text" id="oldAddress" name="oldAddress" th:field="*{oldAddress}"
                  class="form-control" value="新宿区西新宿1-1-1"/>
+                 <font color="red"><td th:if="${#fields.hasErrors('oldAddress')}" th:errors="*{oldAddress}">Name Error</td></font>
         </div>
         <div class="form-group">
           <label for="newPrefectureId">お届け先住所（都道府県）</label>
@@ -60,6 +61,7 @@
           <label for="newAddress">お届け先住所（市区町村以下）</label>
           <input type="text" id="newAddress" name="newAddress" th:field="*{newAddress}" class="form-control"
                  value="札幌市南区1"/>
+                 <font color="red"><td th:if="${#fields.hasErrors('newAddress')}" th:errors="*{newAddress}">Name Error</td></font>
         </div>
         <div class="form-month">
           <label for="month">引越し予定月</label>
@@ -76,7 +78,7 @@
             <option>10</option>
             <option>11</option>
             <option>12</option>
-          </select>
+          </select> 
         </div>
       </fieldset>
       <fieldset>
@@ -84,19 +86,29 @@
         <div class="form-group">
           <label for="box">段ボールの個数</label>
           <input type="number" min="0" id="box" name="box" th:field="*{box}" class="form-control" value="10"/>
+          <font color="red"><td th:if="${#fields.hasErrors('box')}" th:errors="*{box}">Name Error</td></font>
+          <div class="label"><font color="DarkGray">※段ボール個数の目安
+            <br>　1人の場合:ダンボール10~15枚くらい
+            <br>　2人の場合:ダンボール20~30枚くらい
+            <br>　3人の場合:30~50枚くらい
+            <br>　4人の場合:50~80枚くらい</font></div>
+          
         </div>
         <div class="form-group">
           <label for="bed">ベッドの個数</label>
           <input type="number" min="0" id="bed" name="bed" th:field="*{bed}" class="form-control" value="3"/>
+          <font color="red"><td th:if="${#fields.hasErrors('bed')}" th:errors="*{bed}">Name Error</td></font>
         </div>
         <div class="form-group">
           <label for="bicycle">自転車の個数</label>
           <input type="number" min="0" id="bicycle" name="bicycle" th:field="*{bicycle}" class="form-control" value="1"/>
+          <font color="red"><td th:if="${#fields.hasErrors('bicycle')}" th:errors="*{bicycle}">Name Error</td></font>
         </div>
         <div class="form-group">
           <label for="washingMachine">洗濯機の個数</label>
           <input type="number" min="0" id="washingMachine" name="washingMachine" th:field="*{washingMachine}" class="form-control"
                  value="1"/>
+                 <font color="red"><td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td></font>
         </div>
         <div class="form-group">
           <label for="washingMachineInstallation">洗濯機の設置工事申し込み</label>
@@ -109,7 +121,7 @@
       <div class="form-group">
         <div class="text-center">
           <button type="submit" name="backToTop" class="btn-back">TOPへ戻る</button>
-          <button type="submit" name="confirm" class="btn btn-primary">ご入力内容の確認へ</button>
+          <button type="submit"  name="confirm" class="btn btn-primary">ご入力内容の確認へ</button>
         </div>
       </div>
     </div>
@@ -118,6 +130,7 @@
 <script src="../js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
 <script src="../js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
 <script src="../js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+
 </body>
 
 </html>
