@@ -327,3 +327,14 @@ td {
     line-height: 28px;
     font-family: "Roboto";
 }
+
+.btn-mail {
+    margin: 32px 64px 32px 96px;
+    border: none;
+    background-color: transparent;
+    color: #2EA9BC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Roboto";
+}

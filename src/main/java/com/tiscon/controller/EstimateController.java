@@ -166,4 +166,9 @@ public class EstimateController {
         return "complete";
     }
 
+    @GetMapping("sendmail")
+    String sendmail(Model model) {
+        return "sendmail";
+    }
+
 }
